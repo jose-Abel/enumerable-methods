@@ -31,8 +31,8 @@ You can clone this code anytime and run it with the Ruby interpreter in the Wind
 
 ### Setup
 You can either copy the code with git clone or with any other method and run it on your local environment. The commands to clone it and then run the game are:
-- git clone https://github.com/jose-Abel/Tic-Tac-Toe-project.git
-- cd Tic-Tac-Toe-project
+- git clone https://github.com/jose-Abel/enumerable-methods.git
+- cd enumerable-methods
 - bin/main.rb (if you are in Linux or Mac)
 - ruby bin/main.rb (for Windows)
 
@@ -41,19 +41,19 @@ You can either copy the code with git clone or with any other method and run it 
 Run the tests for the linters.yml and rubocop and everything passes. The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
 
 For the linters, this tests runs once you make a PR, if you have it in the respective folder. In order to have this tests, after cloning this project:
- - cd Tic-Tac-Toe-project
+ - cd enumerable-methods
 - From the root of this project create the folders .github/workflows
 - Add a copy of [.github/workflows/tests.yml](https://github.com/microverseinc/linters-config/blob/master/ruby/.github/workflows/tests.yml) to the .github/workflows
 
 To download rubocop and run the tests on your local environment, this are the commands to type in the Linux, Mac terminal or Windows cmd:
 - gem install rubocop
-- cd Tic-Tac-Toe-project
+- cd enumerable-methods
 - copy this file [.rubocop.yml](https://github.com/microverseinc/linters-config/blob/master/ruby/.rubocop.yml) in the root directory of the project
 - type in the terminal 'rubocop'
 
 The commands to install and run rspecs in the Linux, Mac terminal or Windows cmd are:
 - gem install rspec
-- cd Tic-Tac-Toe-project
+- cd enumerable-methods
 - rspec
 
 ### Acknowledgments
