@@ -26,7 +26,7 @@ describe Enumerable do
   describe '#my_each_with_index' do
     let(:new_arr) { [2, 6, 8] }
 
-    it 'Iterate over the array is called, do the instructions in the block predicate over each element and returns an the elements changed based in the instructions of the block predicate' do
+    it 'Iterate over the array is called, do the instructions in the block predicate over each element and returns the elements changed based in the instructions of the block predicate' do
       expect do
         new_arr.my_each_with_index { |el, i| puts el + i }
       end.to output("2\n7\n10\n").to_stdout
@@ -154,11 +154,11 @@ describe Enumerable do
   describe '#my_inject' do
     let(:new_range) { (5..10) }
 
-    it 'Return a LocalJumpError error if no block is given' do
+    it 'Return a LocalJumpError if no block is given' do
       expect { new_range.my_inject }.to raise_error LocalJumpError
     end
 
-    it 'Iterate over the array is called and return a the value of the operation perfomed in the block predicate' do
+    it 'Iterate over the array is called and return the value of the operation perfomed in the block predicate' do
       expect(new_range.my_inject { |sum, n| sum + n }).to eq(45)
     end
 
@@ -166,15 +166,15 @@ describe Enumerable do
       expect(new_range.my_inject { |sum, n| sum + n }).yield_self
     end
 
-    it 'Iterate over the array is called and return a the value of the operation perfomed in the block predicate and the parameter given' do
+    it 'Iterate over the array is called and return the value of the operation perfomed in the block predicate and the parameter given' do
       expect(new_range.my_inject(2) { |product, n| product * n }).to eq(302_400)
     end
 
-    it 'Iterate over the array is called and return a the value of the operation perfomed based in the symbol mathematical method provided in the argument' do
+    it 'Iterate over the array is called and return the value of the operation perfomed based in the mathematical method pass as a Symbol in the argument' do
       expect(new_range.my_inject(:+)).to eq(45)
     end
 
-    it 'Iterate over the array is called and return a the value of the operation perfomed with the first number parameter based the symbol mathematical method provided in the argument' do
+    it 'Iterate over the array is called and return the value of the operation perfomed with the first number parameter based in the mathematical method pass as a Symbol in the second argument' do
       expect(new_range.my_inject(1, :*)).to eq(151_200)
     end
   end
