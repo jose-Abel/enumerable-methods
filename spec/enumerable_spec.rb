@@ -18,7 +18,7 @@ describe Enumerable do
       expect(new_arr.my_each { |el| el + 2 }).yield_self
     end
 
-    it 'Should return the enumerator if no block is given' do
+    it 'Return an enumerator if no block is given' do
       expect(new_arr.my_each).to be_an Enumerator
     end
   end
@@ -36,7 +36,7 @@ describe Enumerable do
       expect(new_arr.my_each_with_index { |el| el + 2 }).yield_self
     end
 
-    it 'Should return the enumerator if no block is given' do
+    it 'Return an enumerator if no block is given' do
       expect(new_arr.my_each_with_index).to be_an Enumerator
     end
   end
@@ -55,7 +55,7 @@ describe Enumerable do
       end
     end
 
-    it 'Should return the enumerator if no block is given' do
+    it 'Return an enumerator if no block is given' do
       expect(new_arr.my_select).to be_an Enumerator
     end
   end
@@ -146,7 +146,7 @@ describe Enumerable do
       expect(new_arr.my_map { |el| el > 3 }).yield_self
     end
 
-    it 'Should return the enumerator if no block is given' do
+    it 'Return an enumerator if no block is given' do
       expect(new_arr.my_map).to be_an Enumerator
     end
   end
@@ -154,7 +154,7 @@ describe Enumerable do
   describe '#my_inject' do
     let(:new_range) { (5..10) }
 
-    it 'Should return the enumerator if no block is given' do
+    it 'Return a LocalJumpError error if no block is given' do
       expect { new_range.my_inject }.to raise_error LocalJumpError
     end
 
