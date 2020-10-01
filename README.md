@@ -7,6 +7,9 @@ The Microverse second project for the Ruby module that consists of reproducing s
 
 ## Built With
 - Ruby programming language
+- VS Code
+- Rubocop
+- Rspec
 
 
 ## Authors
@@ -20,7 +23,7 @@ The Microverse second project for the Ruby module that consists of reproducing s
 
 
 ## Getting Started
-You can clone this code anytime and run it with the Ruby interpreter in the windows console or unix terminal.
+You can clone this code anytime (git c) and run it with the Ruby interpreter in the windows console or unix terminal.
 
 
 ### Setup

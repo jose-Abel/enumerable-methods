@@ -9,7 +9,7 @@ describe Enumerable do
     let(:new_arr) { [2, 6, 8] }
 
     it 'Iterate over the array is called and do the instructions in the block predicate over each element' do
-      expect( new_arr.my_each { |el| puts el + 2 }).to eql( new_arr.each { |el| puts el + 2 })
+      expect(new_arr.my_each { |el| puts el + 2 }).to eql(new_arr.each { |el| puts el + 2 })
     end
 
     it 'Iterate over the array is called and yield control to the block predicate' do
@@ -102,15 +102,15 @@ describe Enumerable do
     let(:str_arr) { %w[ant bear cat] }
 
     it 'Iterate over the array is called and return a boolean either true or false, if none of the elements in the array satisfy the conditions specified in the block' do
-      expect(new_arr.my_none? { |el| el > 3 }).to eq(false)
+      expect(new_arr.my_none? { |el| el > 3 }).to eql(new_arr.none? { |el| el > 3 })
     end
 
     it 'Iterate over the array is called and return a boolean either true or false, if none of the elements in the array are of the same class specified in the argument' do
-      expect(new_arr.my_none?(Numeric)).to eq(false)
+      expect(new_arr.my_none?(Numeric)).to eql(new_arr.none?(Numeric))
     end
 
     it 'Iterate over the array is called and return a boolean either true or false, if none of the elements in the array matches the regular expression specified in the argument' do
-      expect(str_arr.my_none?(/d/)).to eq(true)
+      expect(str_arr.my_none?(/d/)).to eql(str_arr.none?(/d/))
     end
 
     it 'Iterate over the array is called and yield control to the block predicate' do
@@ -122,7 +122,7 @@ describe Enumerable do
     let(:new_arr) { [1, 2, 3, 5, 8] }
 
     it 'Iterate over the array is called and return the number of elements in the array that satisfy the conditions specified in the block' do
-      expect(new_arr.my_count { |el| el > 3 }).to eq(2)
+      expect(new_arr.my_count { |el| el > 3 }).to eql(new_arr.count { |el| el > 3 })
     end
 
     it 'Iterate over the array is called and yield control to the block predicate' do
@@ -134,7 +134,7 @@ describe Enumerable do
     let(:new_arr) { [1, 2, 3, 5, 8] }
 
     it 'Iterate over the array is called and return a new array with booleans true or false, according to the elements satisfy the conditions specified in the block' do
-      expect(new_arr.my_map { |el| el > 3 }).to eq([false, false, false, true, true])
+      expect(new_arr.my_map { |el| el > 3 }).to eql(new_arr.map { |el| el > 3 })
     end
 
     it 'Iterate over the array is called and yield control to the block predicate' do
@@ -154,7 +154,7 @@ describe Enumerable do
     end
 
     it 'Iterate over the array is called and return the value of the operation perfomed in the block predicate' do
-      expect(new_range.my_inject { |sum, n| sum + n }).to eq(45)
+      expect(new_range.my_inject { |sum, n| sum + n }).to eql(new_range.inject { |sum, n| sum + n })
     end
 
     it 'Iterate over the array is called and yield control to the block predicate' do
@@ -162,15 +162,15 @@ describe Enumerable do
     end
 
     it 'Iterate over the array is called and return the value of the operation perfomed in the block predicate and the parameter given' do
-      expect(new_range.my_inject(2) { |product, n| product * n }).to eq(302_400)
+      expect(new_range.my_inject(2) { |product, n| product * n }).to eql(new_range.inject(2) { |product, n| product * n })
     end
 
     it 'Iterate over the array is called and return the value of the operation perfomed based in the mathematical method pass as a Symbol in the argument' do
-      expect(new_range.my_inject(:+)).to eq(45)
+      expect(new_range.my_inject(:+)).to eql(new_range.inject(:+))
     end
 
     it 'Iterate over the array is called and return the value of the operation perfomed with the first number parameter based in the mathematical method pass as a Symbol in the second argument' do
-      expect(new_range.my_inject(1, :*)).to eq(151_200)
+      expect(new_range.my_inject(1, :*)).to eql(new_range.inject(1, :*))
     end
   end
 end
