@@ -3,7 +3,9 @@ require_relative '../enumerable.rb'
 
 describe Enumerable do
   describe '#my_each' do
-    it 'If a block is not given it should return the enumerable' do
+    it 'If a block is not given it should return the enumerator' do
+      text = ''
+      is_expected([1, 2, 3].my_each).to include("<Enumerator:")
     end
 
     it '' do
